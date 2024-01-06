@@ -45,15 +45,15 @@ def main():
 
     st.header("1. Pass your OPEN AI API KEY here")
     v='demo'
-    openai_key=st.text_input("**OPEN AI API KEY**", value=v)
+    openai_key=st.text_input("**HUGGINGFACE API KEY**", value=v)
     st.write("You can get your OpenAI API key from [here](https://platform.openai.com/account/api-keys)")
 
 
     if openai_key==v:
-        openai_key=st.secrets["OPENAI_API_KEY"]
+        openai_key=st.secrets["HUGGINGFACEHUB_API_TOKEN"]
     # if openai_key=='':
     #     load_dotenv()
-    os.environ["OPENAI_API_KEY"] = openai_key
+    os.environ["HUGGINGFACEHUB_API_TOKEN"] = openai_key
 
     # upload a PDF file
 
