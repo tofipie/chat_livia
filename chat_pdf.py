@@ -49,11 +49,11 @@ def main():
     st.write("You can get your OpenAI API key from [here](https://platform.openai.com/account/api-keys)")
 
 
-    if openai_key==v:
-        openai_key=st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+  #  if openai_key==v:
+   #     openai_key=st.secrets["HUGGINGFACEHUB_API_TOKEN"]
     # if openai_key=='':
     #     load_dotenv()
-    os.environ["HUGGINGFACEHUB_API_TOKEN"] = openai_key
+ #   os.environ["HUGGINGFACEHUB_API_TOKEN"] = openai_key
 
     # upload a PDF file
 
@@ -115,8 +115,8 @@ def main():
 
              #   llm = OpenAI()
                 llm = HuggingFaceHub(repo_id="google/flan-t5-xxl",
-                                                        model_kwargs={"temperature":0.5, "max_length":512})
-                                                      #  huggingfacehub_api_token='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')
+                                                        model_kwargs={"temperature":0.5, "max_length":512},
+                                                        huggingfacehub_api_token='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')
                 chain = load_qa_chain(llm=llm, chain_type="stuff")
                 with get_openai_callback() as cb:
                     response = chain.run(input_documents=docs, question=query)
