@@ -8,7 +8,7 @@ Created on Sat Jan  6 20:55:28 2024
 
 
 import streamlit as st
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 import pickle
 from PyPDF2 import PdfReader
 #from streamlit_extras.add_vertical_space import add_vertical_space
@@ -34,7 +34,7 @@ with st.sidebar:
 
     ''')
   #  add_vertical_space(5)
-    st.write('Made with ❤️ by [Livia Ellen](https://liviaellen.com/portfolio)')
+    st.write('Made by [Noa Cohen]')
 
 
 
@@ -43,7 +43,7 @@ def main():
     st.header("Talk to your PDF 💬")
     st.write("This app uses OpenAI's LLM model to answer questions about your PDF file. Upload your PDF file and ask questions about it. The app will return the answer from your PDF file.")
 
-    st.header("1. Pass your OPEN AI API KEY here")
+    st.header("1. Pass your HUGGINGFACEHUB API KEY here")
     v='demo'
     openai_key=st.text_input("**HUGGINGFACE API KEY**", value=v)
     st.write("You can get your OpenAI API key from [here](https://platform.openai.com/account/api-keys)")
