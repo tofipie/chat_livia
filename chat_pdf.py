@@ -49,8 +49,8 @@ def main():
     st.write("You can get your OpenAI API key from [here](https://platform.openai.com/account/api-keys)")
 
 
-   # if openai_key==v:
-    #    openai_key=st.secrets["HUGGINGFACEHUB_API_TOKEN"]
+    if openai_key==v:
+        openai_key=st.secrets["HUGGINGFACEHUB_API_TOKEN"]
     # if openai_key=='':
     #     load_dotenv()
     os.environ["HUGGINGFACEHUB_API_TOKEN"] = openai_key
