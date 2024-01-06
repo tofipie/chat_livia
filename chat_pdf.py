@@ -113,7 +113,10 @@ def main():
             else:
                 docs = VectorStore.similarity_search(query=query, k=3)
 
-                llm = OpenAI()
+             #   llm = OpenAI()
+                llm = HuggingFaceHub(repo_id="google/flan-t5-xxl",
+                                                        model_kwargs={"temperature":0.5, "max_length":512})
+                                                      #  huggingfacehub_api_token='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')
                 chain = load_qa_chain(llm=llm, chain_type="stuff")
                 with get_openai_callback() as cb:
                     response = chain.run(input_documents=docs, question=query)
