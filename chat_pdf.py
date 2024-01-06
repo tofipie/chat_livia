@@ -8,7 +8,7 @@ Created on Sat Jan  6 20:55:28 2024
 
 
 import streamlit as st
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import pickle
 from PyPDF2 import PdfReader
 from streamlit_extras.add_vertical_space import add_vertical_space
